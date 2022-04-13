@@ -1,0 +1,194 @@
+﻿@model modelList
+@using TriggerSoftwareSolutions.Models
+@{
+    ViewBag.Title = "RegistroEmpresa";
+    Layout = null;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale-1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Registro de empresa</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <link href="~/content/plugins/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="~/content/style/style.css" rel="stylesheet" />
+    <script src="~/content/plugins/js/jquery-3.1.1.min.js"></script>
+    <script src="~/content/plugins/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <br /><br /><br />
+
+    <div class="container">
+        <div class="row">
+            <div class="divregistroempresa">
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <span><label><b>Registrar empresa</b></label></span>
+                    </div>
+                </div>
+
+                <br /><br /><br />
+
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <img src="~/content/img/img_logo/TuLogo.png" alt="Avatar" width="80px" class="img-circle previsualizar" />
+                        <label for="imagen" class="input-label"><i class="fa fa-cloud-upload"></i>Subir imagen</label><input type="file" name="imagen" id="imagen" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <span><label><b>Razon Social:</b></label></span>
+                        <input type="text" class="form-control" id="txtrazonsocial" />
+                    </div>
+
+                    <div class="col-md-3">
+                        <span><label><b>RUC:</b></label></span>
+                        <input type="text" class="form-control" id="txtrazonsocial" />
+                        <br />
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-md-3">
+
+                    </div>
+        
+
+                    <div class="col-md-4">
+                        <span><label><b>Email:</b></label></span>
+                        <input type="text" class="form-control" id="txtrazonsocial" />
+                    </div>
+
+                    <div class="col-md-2">
+                        <span><label><b>Pais:</b></label></span>
+                        <select class="form-control" id="s1pais">
+                        @foreach (var item in Model.listPais)
+                        { 
+                           <option value="@item.idpais">@item.pais</option>
+                        }
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                    <span><label><b>Moneda:</b></label></span>
+                    <select class="form-control" id="s1moneda">
+                        <option value="value">text</option>
+                    </select>
+
+                    <br />
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                    </div>
+
+                    <div class="col-md-9">
+                        <span><label><b>Direccion:</b></label></span>
+                        <input type="text" class="form-control" id="txtdireccion" />
+                        <br />
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                    </div>
+
+                    <div class="col-md-2">
+                        <span><label><b>¿Vende con impuesto?</b></label></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        SI <input type="radio" id="rdsi" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        NO <input type="radio" id="rdno" />
+
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <br />
+                    <div class="col-md-3">
+                    </div>
+
+                    <div class="col-md-2">
+                        <span><label><b>Tipo Impuesto:</b></label></span>
+                        <select class="form-control" id="s1tipoimpuesto">
+                            <option value="value">text</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <span><label><b>Porcentaje:</b></label></span>
+                        <select class="form-control" id="s1porcentaje">
+                            <option value="value">text</option>
+                        </select>
+                        <br />
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <br />
+                    <div class="col-md-3">
+
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-default" id="btnsiguiente">Siguiente</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-danger">Cancelar</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="divregistrousersuperadmin" style="display:none;">
+
+                <div class="col-md-12">
+
+                    <div class="col-md-3"></div>
+                    <div class="col-md-9">
+                        <span><label>Nombre administrador</label></span>
+                        <input type="text" class="form-control" id="txtusername" />
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <br />
+                    <div class="col-md-3"></div>
+                    <div class="col-md-4">
+                        <span><label>Contraseña:</label></span>
+                        <input type="text" class="form-control" id="txtuseradmin" />
+                    </div>
+                    <div class="col-md-4">
+                        <span><label>Confirmar contraseña</label></span>
+                        <input type="text" class="form-control" id="txtpassword" />
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <br />
+                    <div class="col-md-3">
+
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-danger" id="btnsiguiente">Atras</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-default">Registrar</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="~/Scripts/App/registroempresa.js" ></script>
